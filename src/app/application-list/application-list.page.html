@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Application List</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <ion-list class="ios list-ios hydrated">
+
+   
+    <ion-item  class="user-list">
+      <ion-label>
+        Iqmal Syafiq 
+      <p class="expenses">
+        Software Engineer
+      </p>
+      <p class="expenses">
+        6 months
+      </p>
+    </ion-label>
+       
+      <div class="item-note" item-end>
+        <button color='dark' ion-button clear >
+          <ion-icon color='success' name="checkmark" style="zoom:2.0"></ion-icon>
+        </button>
+        <button ion-button clear (click)="deleteJob(job.$key)">
+          <ion-icon color='danger' name="trash" style="zoom:2.0"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+
+    <ion-item  class="user-list">
+      <ion-label>
+        Syafiq Iqmal 
+      <p class="expenses">
+        Computer Engineer
+      </p>
+      <p class="expenses">
+        6 months
+      </p>
+    </ion-label>
+       
+      <div class="item-note" item-end>
+        <button color='dark' ion-button clear >
+          <ion-icon color='success' name="checkmark" style="zoom:2.0"></ion-icon>
+        </button>
+        <button ion-button clear (click)="deleteJob(job.$key)">
+          <ion-icon color='danger' name="trash" style="zoom:2.0"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+    
+  </ion-list>
+
+  
+
+  

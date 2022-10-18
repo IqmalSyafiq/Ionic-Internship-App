@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Internship Jobs</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+  <ion-list class="ios list-ios hydrated">
+
+   
+    <ion-item *ngFor="let job of Jobs" class="user-list">
+      <ion-label>
+        {{job.Position}} 
+      <p class="expenses">
+        {{job.Company}}
+      </p>
+      <p class="expenses">
+        {{job.Duration}}
+      </p>
+    </ion-label>
+       
+      <div class="item-note" item-end>
+        <button color='dark' ion-button clear [routerLink]="['/edit-job/', job.$key ]">
+          <ion-icon color='dark' name="create" style="zoom:2.0"></ion-icon>
+        </button>
+        <button ion-button clear (click)="deleteJob(job.$key)">
+          <ion-icon color='danger' name="trash" style="zoom:2.0"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+    
+  </ion-list>
+  
+  

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sign Up</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-pading">
+  <div class="form">
+    <ion-item>
+      <ion-label position="stacked">Name</ion-label>
+      <ion-input [(ngModel)]='name'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input [(ngModel)]='email'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input [(ngModel)]='password' type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Confirm Password</ion-label>
+      <ion-input [(ngModel)]='Cpassword' type="password"></ion-input>
+    </ion-item>
+
+    <ion-list>
+      <ion-radio-group [(ngModel)]='userRole'  (submit)="submit()">
+        <ion-list-header>
+          <ion-label>Register as:</ion-label>
+        </ion-list-header>
+    
+        <ion-item>
+          <ion-label>Student</ion-label>
+          <ion-radio slot="start" value="Student"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Supervisor</ion-label>
+          <ion-radio slot="start" value="Supervisor"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Company</ion-label>
+          <ion-radio slot="start" value="Company"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <ion-button (click)='signup()' expand='block'>Register</ion-button>
+  </div>
+</ion-content>
+

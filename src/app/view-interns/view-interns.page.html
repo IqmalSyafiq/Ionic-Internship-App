@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Interns List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-list class="ios list-ios hydrated">
+
+    <ion-item> <!--*ngFor="let student of Students" class="user-list"--> 
+      <ion-label>
+        <p class="expenses"> 
+          Iqmal Syafiq<!--{{student.Name}}student-->
+        </p>
+      <p class="expenses">
+        Dell<!--{{student.Company}}-->
+      </p>
+      <p class="expenses">
+        6 months<!--{{student.Duration}}-->
+      </p>
+      <p class="expenses">
+       80/100<!--{{student.Marks}}-->
+      </p>
+    </ion-label>
+       
+      <div class="item-note" item-end>
+        <button color='dark' ion-button clear (click)="downloadLogbook(student.$key)">
+          <ion-icon name="download-outline" style="zoom:2.0"></ion-icon>
+        </button>
+        <button ion-button clear (click)="marksLogbook(student.$key)">
+          <ion-icon name="create" style="zoom:2.0"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+
+    <ion-item> <!--*ngFor="let student of Students" class="user-list"--> 
+      <ion-label>
+        <p class="expenses"> 
+          Siti Salhah<!--{{student.Name}}student-->
+        </p>
+      <p class="expenses">
+        Google<!--{{student.Company}}-->
+      </p>
+      <p class="expenses">
+        6 months<!--{{student.Duration}}-->
+      </p>
+      <p class="expenses">
+       80/100<!--{{student.Marks}}-->
+      </p>
+    </ion-label>
+       
+      <div class="item-note" item-end>
+        <button color='dark' ion-button clear (click)="downloadLogbook(student.$key)">
+          <ion-icon name="download-outline" style="zoom:2.0"></ion-icon>
+        </button>
+        <button ion-button clear (click)="marksLogbook(student.$key)">
+          <ion-icon name="create" style="zoom:2.0"></ion-icon>
+        </button>
+      </div>
+    </ion-item>
+    
+  </ion-list>

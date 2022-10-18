@@ -1,0 +1,119 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="ios hydrated">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ios title-ios hydrated">view-internship-job</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <form [formGroup]="application_form" (ngSubmit)="onSubmit()">
+
+    <ion-item>
+      <ion-label position="floating">Company</ion-label>
+      <ion-input formControlName="Company" type="text"  readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Position</ion-label>
+      <ion-input formControlName="Position" type="text"  readonly>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Duration</ion-label>
+      <ion-input formControlName="Duration" type="text"  readonly>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Name</ion-label>
+      <ion-input type="text" formControlName="name" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Email</ion-label>
+      <ion-input type="text" formControlName="email" readonly></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <input type="file" (change)="onFileChange($event)" />
+    </ion-item>
+    <ion-button color="primary" expand="full" (click)="submitForm()"> Upload Single </ion-button>
+    <input type="file" (change)="onFileOneChange($event)" />
+    <input type="file" (change)="onFileTwoChange($event)" />
+    <input type="file" (change)="onFileThreeChange($event)" />
+    <ion-button color="primary" expand="full" (click)="submitMultipleForm()">
+      Upload Multiple
+    </ion-button>
+
+    <ion-item>
+      <ion-label color="primary">I accept terms and conditions</ion-label>
+      <ion-checkbox color="primary" formControlName="terms"></ion-checkbox>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.terms">
+        <div class="error-message" *ngIf="application_form.get('terms').hasError(validation.type) && (application_form.get('terms').dirty || application_form.get('terms').touched)">
+          <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <ion-button color="primary" class="submit-btn" expand="block" type="submit" [disabled]="!application_form.valid">Submit data</ion-button>
+  </form>
+</ion-content>
+
+
+
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-title>Apply-internship-job</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content>
+
+
+
+  
+<ion-header>
+  <ion-toolbar class="ios hydrated">
+    <ion-title class="ios title-ios hydrated">Add Internship Job</ion-title>
+    <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<div style="height: 900px; width: 100%; left: 0; top: 50px; overflow: hidden; position: fixed; ">
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="addJobForm" (ngSubmit)="formSubmit()">
+      <ion-item>
+        <ion-label position="floating">Company</ion-label>
+        <ion-input formControlName="Company" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Position</ion-label>
+        <ion-input formControlName="Position" type="text" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Duration</ion-label>
+        <ion-input formControlName="Duration" type="text" required>
+        </ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">Add Job</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+</ion-content>
+</div>
+
+-->
+
